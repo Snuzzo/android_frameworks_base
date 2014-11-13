@@ -2284,4 +2284,6 @@
     <!-- Doze: force using accelerometer as pick up sensor -->
     <bool name="config_dozeUseAccelerometer">false</bool>
 
+    <!-- Ignored sms packages -->
+    <string-array name="config_ignored_sms_packages"></string-array>
 </resources>
