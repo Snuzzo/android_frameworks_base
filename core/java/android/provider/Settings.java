@@ -3114,6 +3114,12 @@ public final class Settings {
         public static final String HEADS_UP_TOUCH_OUTSIDE = "heads_up_touch_outside";
 
         /**
+         * Defines the global heads up notification decay
+         * @hide
+         */
+        public static final String HEADS_UP_NOTIFCATION_DECAY = "heads_up_notification_decay";
+
+        /**
          * Network traffic indicator, goes from least to greatest significant bitwise
          * 0 = Display up-stream traffic if set
          * 1 = Display down-stream traffic if set
