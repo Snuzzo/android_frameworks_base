@@ -68,13 +68,13 @@ public class AdbOverNetworkTile extends QSTile<QSTile.BooleanState> {
                 InetAddress address = NetworkUtils.intToInetAddress(wifiInfo.getIpAddress());
                 state.label = address.getHostAddress();
             } else {
-                //if wifiInfo is null, set the enabled label without host address
-                state.label = mContext.getString(R.string.quick_settings_network_adb_enabled_label);
+                // if wifiInfo is null, set the label without host address
+                state.label = mContext.getString(R.string.quick_settings_network_adb_label);
             }
             state.iconId = R.drawable.ic_qs_network_adb_on;
         } else {
-            // Otherwise set the disabled label and icon
-            state.label = mContext.getString(R.string.quick_settings_network_adb_disabled_label);
+            // Otherwise set the label and disabled icon
+            state.label = mContext.getString(R.string.quick_settings_network_adb_label);
             state.iconId = R.drawable.ic_qs_network_adb_off;
         }
     }
