@@ -77,4 +77,8 @@
   <java-symbol type="string" name="quick_settings_tile_flashlight_not_summary" />
   <java-symbol type="drawable" name="ic_signal_flashlight_disable" />
 
+  <!-- Automatic display brightness settings -->
+  <java-symbol type="integer" name="config_brighteningLightDebounce" />
+  <java-symbol type="integer" name="config_darkeningLightDebounce" />
+
 </resources>
