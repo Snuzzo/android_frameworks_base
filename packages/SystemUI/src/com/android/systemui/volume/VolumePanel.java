@@ -730,6 +730,10 @@ public class VolumePanel extends Handler implements DemoMode {
         }
     }
 
+    private static boolean isRing(int streamType) {
+        return streamType == AudioManager.STREAM_RING;
+    }
+
     private void createSliders() {
         final Resources res = mContext.getResources();
         final LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(
@@ -743,6 +747,12 @@ public class VolumePanel extends Handler implements DemoMode {
 
             final int streamType = streamRes.streamType;
             final boolean isNotification = isNotificationOrRing(streamType);
+            boolean enableClick = false;
+            if (mVolumeLinkNotification) {
+                enableClick = isNotification;
+            } else {
+                enableClick = isRing(streamType);
+            }
 
             final StreamControl sc = new StreamControl();
             sc.streamType = streamType;

@@ -51,13 +51,12 @@ public class HeadsUpTile extends QSTile<QSTile.BooleanState> {
 
     private boolean getUserHeadsUpState() {
          return Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.HEADS_UP_USER_ENABLED,
-                Settings.System.HEADS_UP_USER_ON) != 0;
+                Settings.System.HEADS_UP_NOTIFICATION, 1) != 0;
     }
 
     private void setEnabled() {
         Settings.System.putInt(mContext.getContentResolver(),
-                Settings.System.HEADS_UP_USER_ENABLED,
+                Settings.System.HEADS_UP_NOTIFICATION,
                 getUserHeadsUpState() ? 0 : 1);
     }
 
@@ -68,11 +67,11 @@ public class HeadsUpTile extends QSTile<QSTile.BooleanState> {
         state.label = mContext.getString(R.string.quick_settings_heads_up_label);
         if (getUserHeadsUpState()) {
             state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_on);
-            state.contentDescription =  mContext.getString(
+            state.label = mContext.getString(
                     R.string.accessibility_quick_settings_heads_up_on);
         } else {
             state.icon = ResourceIcon.get(R.drawable.ic_qs_heads_up_off);
-            state.contentDescription =  mContext.getString(
+            state.label = mContext.getString(
                     R.string.accessibility_quick_settings_heads_up_off);
         }
     }
